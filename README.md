@@ -14,3 +14,7 @@ This repository is not intended to be interacted with directly!  See the [manife
   * Build the image with `MACHINE=hello-world-zcu102-zynqmp bitbake petalinux-image-minimal`
   * Start QEMU with `runqemu hello-world-zcu102-zynqmp`
   * When finished, stop QEMU with `CTRL-A`, `X`
+
+## Features
+
+* Note the partition table is set up for OTA firmware updates.
