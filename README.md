@@ -18,3 +18,9 @@ This repository is not intended to be interacted with directly!  See the [manife
 ## Features
 
 * Note the partition table is set up for OTA firmware updates.
+
+## Random commands
+
+* `MACHINE=cora-z7 devtool modify device-tree` -- use devtool to modify a recipe
+  * Make changes in workspace, check them in to git
+  * Commit changes to meta-pseudo-design with `MACHINE=cora-z7 devtool update-recipe device-tree -a meta-pseudo-design`
