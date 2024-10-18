@@ -6,13 +6,13 @@ This repository is not intended to be interacted with directly!  See the [manife
 
 ## Quick Start - Run ZCU102 in QEMU
 
-* Choose your yocto release, e.g. `repo init -b gatesgarth`
-* Choose your manifest, e.g. `repo init -m xilinx`
+* Choose your yocto release, e.g. `repo init -b langdale-m xilinx`
 * Sync the repositories with `repo sync`
 * Build and start the development docker container: `./create-build-image.sh && ./start-build-image.sh`
   * Source the environment wtih `source setupsdk`
   * Build the image with `MACHINE=hello-world-zcu102-zynqmp bitbake petalinux-image-minimal`
-  * Start QEMU with `runqemu hello-world-zcu102-zynqmp`
+  * Start QEMU with `runqemu hello-world-zcu102-zynqmp nographic`
+    * Log in with the `petalinux` user.
   * When finished, stop QEMU with `CTRL-A`, `X`
 
 ## Features
