@@ -24,3 +24,9 @@ This repository is not intended to be interacted with directly!  See the [manife
 * `MACHINE=cora-z7 devtool modify device-tree` -- use devtool to modify a recipe
   * Make changes in workspace, check them in to git
   * Commit changes to meta-pseudo-design with `MACHINE=cora-z7 devtool update-recipe device-tree -a meta-pseudo-design`
+* `MACHINE=cora-z7 bitbake core-image-minimal -c populate_sdk` -- Create the SDK.
+  * Run `.../build-langdale/tmp/deploy/sdk/petalinux-glibc-x86_64-core-image-minimal-cortexa9t2hf-neon-cora-z7-toolchain-2024.1.sh` to set up SDK.
+
+### CURRENT STATUS
+
+`runqemu cora-z7` doesn't function.  I think the `-serial null` command might be incorrect.
