@@ -27,6 +27,7 @@ It's HARD.  Being a meta-tool, it requires knowledge of both Yocto and the indiv
 Being an open source project, documentation is tedious and lacking.
 
 It's tempting to choose alternatives for your project structure, but all paths lead to Yocto:
+
 * Rolling your own build system...
   * requires writing script after script after script to do what Yocto already does
   * requires inventing new infrastructure to accompany your project
@@ -37,12 +38,9 @@ It's tempting to choose alternatives for your project structure, but all paths l
   * isn't suitable for embedded products
   * probably isn't supported by your HW manufacturer
 
-## Maintaining a Yocto project
+## Navigating the `pseudo-design-linux` project
 
-## Building the project
-
-## Installing on Cora Z7s
-
-* Program the `.wic` file to the SD card
-* Set the board to boot from SD card by shorting JP2
-* Open the terminal with `sudo picocom /dev/ttyUSB1 -b 115200` (your device may vary)
+* Machines
+* Distros
+* Images
+* Releases (aka branches)
