@@ -22,3 +22,8 @@ This repository is not intended to be interacted with directly!  See the [manife
 * Program the `.wic` file to the SD card
 * Set the board to boot from SD card by shorting JP2
 * Open the terminal with `sudo picocom /dev/ttyUSB1 -b 115200` (your device may vary)
+
+### Run QEMU for ZCU102
+
+`MACHINE=cora-z7 bitbake core-image-minimal`
+`runqemu zcu102-zynqmp nographic`

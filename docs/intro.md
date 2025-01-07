@@ -37,6 +37,8 @@ It's tempting to choose alternatives for your project structure, but all paths l
   * limits what a "stripped down" version of your image will look like 
   * isn't suitable for embedded products
   * probably isn't supported by your HW manufacturer
+* Petalinux
+  * AMD now maintains [yocto recipes](https://github.com/Xilinx/yocto-manifests) without needing to use Petalinux over top
 
 ## Navigating the `pseudo-design-linux` project
 
