@@ -18,6 +18,7 @@ This repository is not intended to be interacted with directly!  See the [manife
 * Sync the repositories with `repo sync`
 * Build and start the development docker container: `./create-build-image.sh && ./start-build-image.sh`
   * Source the environment wtih `source setupsdk`
+    * The first time you set this up, add the `meta-pseudo-design` layer to `build/conf/bblayers.conf`
   * Build the image with `MACHINE=cora-z7 bitbake petalinux-image-minimal`
 * Program the `.wic` file to the SD card
 * Set the board to boot from SD card by shorting JP2
