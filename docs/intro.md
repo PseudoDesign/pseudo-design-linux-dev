@@ -42,6 +42,7 @@ It's tempting to choose alternatives for your project structure, but all paths l
 
 ## Navigating the `pseudo-design-linux` project
 
+* Meta Layers
 * Machines
 * Distros
 * Images
