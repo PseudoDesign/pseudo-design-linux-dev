@@ -55,3 +55,7 @@ namespace :manifest do
         end
     end
 end
+
+namespace :docker do
+
+end
