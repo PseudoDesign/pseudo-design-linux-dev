@@ -22,12 +22,12 @@ class Configuration
     end
 end
 
+# Hard-coded configurations
+workspace_dir = File.expand_path(File.join(File.dirname(__FILE__), "workspace"))
+
 # A list of configurations and defaults
 env_manifest_branch = Configuration.new('manifest-branch', 'scarthgap')
 env_manifest_name = Configuration.new('manifest-name', 'default')
-
-# Derrived configurations.
-
 
 namespace :manifest do
     desc "Get or Set the manifest branch to the provided value."
@@ -46,9 +46,12 @@ namespace :manifest do
         puts "Manifest name: #{env_manifest_name.value}"
     end
 
-    desc "Initialize and sync the environment using the `repo` command"
+    desc "Initialize and sync the environment in the `workspace` directory using the `repo` command"
     task :sync do
-        `repo init -u 'git@github.com:PseudoDesign/pseudo-design-linux-manifest.git' -m '#{env_manifest_name.value}.xml' -b '#{env_manifest_branch.value}'`
-        `repo sync`
+        mkdir_p workspace_dir
+        Dir.chdir(workspace_dir) do
+            `repo init -u 'git@github.com:PseudoDesign/pseudo-design-linux-manifest.git' -m '#{env_manifest_name.value}.xml' -b '#{env_manifest_branch.value}'`
+            `repo sync`
+        end
     end
 end

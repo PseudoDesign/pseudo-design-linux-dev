@@ -1,7 +1,2 @@
-# Gitignore for this project is an approve list; this allows
-# the top-level git repository to be updated and not catch any content from the manifests.
-**/*
-!.gitignore
-!README.md
-!rakefile.rb
-!docs/*
+.conf
+workspace
