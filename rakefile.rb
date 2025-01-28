@@ -24,10 +24,15 @@ end
 
 # Hard-coded configurations
 workspace_dir = File.expand_path(File.join(File.dirname(__FILE__), "workspace"))
+docker_image_name = "pseudo-design-linux-dev"
 
 # A list of configurations and defaults
 env_manifest_branch = Configuration.new('manifest-branch', 'scarthgap')
 env_manifest_name = Configuration.new('manifest-name', 'default')
+
+# Derrived values
+docker_tag = "#{env_manifest_branch.value}-#{env-manifest-name}"
+docker_image_full_name = "#{docker_image}:#{docker_tag}"
 
 namespace :manifest do
     desc "Get or Set the manifest branch to the provided value."
@@ -57,5 +62,13 @@ namespace :manifest do
 end
 
 namespace :docker do
+    desc "Build the development container. It will be tagged #{docker_image_full_name}"
+    task :build do
 
+    end
+
+    desc "(Re)start the development container with tag #{docker_image_full_name}"
+    task :start do
+
+    end
 end
