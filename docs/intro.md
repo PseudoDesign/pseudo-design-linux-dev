@@ -17,7 +17,7 @@
 
 ### Portable, Iteratable, Maintainable
 
-* One project that supports multiple boards (EVK5, ZCU102, RPI, etc)
+* One project that supports multiple boards (coraz7, ZCU102, RPI, etc)
 * One project that supports multiple images (development, production, vendor-specific, etc)
 
 ### This sounds great, why *not* use it?

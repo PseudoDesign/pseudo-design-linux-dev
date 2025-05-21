@@ -31,8 +31,8 @@ env_manifest_branch = Configuration.new('manifest-branch', 'scarthgap')
 env_manifest_name = Configuration.new('manifest-name', 'default')
 
 # Derrived values
-docker_tag = "#{env_manifest_branch.value}-#{env-manifest-name}"
-docker_image_full_name = "#{docker_image}:#{docker_tag}"
+docker_tag = "#{env_manifest_branch.value}-#{env_manifest_name.value}"
+docker_image_full_name = "#{docker_image_name}:#{docker_tag}"
 
 namespace :manifest do
     desc "Get or Set the manifest branch to the provided value."
@@ -64,11 +64,11 @@ end
 namespace :docker do
     desc "Build the development container. It will be tagged #{docker_image_full_name}"
     task :build do
-
+        `DOCKER_FULL_IMAGE_NAME=#{docker_image_full_name} ./docker/create-build-image.sh`
     end
 
     desc "(Re)start the development container with tag #{docker_image_full_name}"
     task :start do
-
+        `DOCKER_FULL_IMAGE_NAME=#{docker_image_full_name} ./docker/start-build-image.sh`
     end
 end
