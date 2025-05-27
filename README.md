@@ -10,7 +10,7 @@ Don't clone this repository directly.  Instead use [repo](https://gerrit.googles
 
 ## Introduction to Yocto
 
-If you're new to Yocto, check out the [Intro to Yocto]() document. This describes the motivations, defines terms, and lays out the structure of this project.
+If you're new to Yocto, check out the [Intro to Yocto](docs/intro.md) document. This describes the motivations, defines terms, and lays out the structure of this project.
 
 ### Quick Start
 
