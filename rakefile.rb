@@ -33,9 +33,15 @@ docker_image_name = "pseudo-design-linux-dev"
 env_manifest_branch = Configuration.new('manifest-branch', 'scarthgap')
 env_manifest_name = Configuration.new('manifest-name', 'default')
 
-# Derrived values
-docker_tag = "#{env_manifest_branch.value}-#{env_manifest_name.value}"
+# A unique-ID for each iteration of branch/name pairs
+env_id = "#{env_manifest_branch.value}-#{env_manifest_name.value}"
+
+# Derrived values for Docker
+docker_tag = env_id
 docker_image_full_name = "#{docker_image_name}:#{docker_tag}"
+
+# Derrived values for Docker
+yocto_build_directory_name = "build-#{env_id}"
 
 namespace :manifest do
     desc "Get or Set the manifest branch to the provided value."
