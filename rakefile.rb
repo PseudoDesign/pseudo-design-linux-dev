@@ -79,7 +79,7 @@ namespace :docker do
         `#{environment_vars} ./docker/create-build-image.sh`
     end
 
-    desc "(Re)start the development container with tag #{docker_image_full_name}"
+    desc "Start the development container with tag #{docker_image_full_name}"
     task :start do
         sh "#{environment_vars} ./docker/start-build-image.sh"
     end
