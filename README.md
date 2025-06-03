@@ -22,3 +22,4 @@ This describes the steps needed to set up and build images to run on the Cora Z7
 * Set up the development environment: `source setupsdk workspace/scarthgap/xilinx`
 * Add the `meta-pseudo-design` configuration: `bitbake-layers add-layer ../../../sources/meta-pseudo-design/`
 * Compile the minimal cora-z7 image: `MACHINE=cora-z7 bitbake petalinux-image-minimal`
+
