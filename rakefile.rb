@@ -103,4 +103,3 @@ namespace :docker do
         sh "#{environment_vars} ./docker/start-build-image.sh"
     end
 end
-

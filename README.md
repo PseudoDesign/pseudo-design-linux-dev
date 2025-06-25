@@ -20,6 +20,7 @@ This describes the steps needed to set up and build images to run on the Cora Z7
 
 * Initialize the xilinx development environment: 
     * `rake manifest:name[xilinx]`
+    * `rake manifest:init`
     * `rake manifest:sync`
 * Build the development container: `rake docker:build`
 * Bring up a shell in the development container: `rake docker:start`
