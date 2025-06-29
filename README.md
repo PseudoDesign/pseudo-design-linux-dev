@@ -24,8 +24,8 @@ This describes the steps needed to set up and build images to run on the Cora Z7
     * `rake manifest:sync`
 * Build the development container: `rake docker:build`
 * Bring up a shell in the development container: `rake docker:start`
-* Set up the development environment: `source scripts/setupsdk-${manifest-name} workspace/${manifest-branch}/${manifest-name}`
-* Compile the minimal cora-z7 image: `MACHINE=${machine-name} bitbake ${image}`
+* Set up the development environment: `source scripts/setupsdk-xilinx workspace/scarthgap/xilinx`
+* Compile the minimal cora-z7 image: `MACHINE=cora-z7 bitbake core-image-minimal`
 
 ## `repo` development workflow
 
