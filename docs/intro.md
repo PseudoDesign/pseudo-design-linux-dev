@@ -51,7 +51,7 @@ It's tempting to choose alternatives for your project structure, but all paths l
   * probably isn't supported by your HW manufacturer
 * Using the typical "Petalinux" tools...
   * Just gives you a less functional, proprietary wrapper around an already functional Yocto ecosystem
-  * AMD now maintains [yocto recipes](https://github.com/Xilinx/yocto-manifests) without needing to use Petalinux over top
+  * AMD now maintains [yocto recipes](https://github.com/Xilinx/yocto-manifests) without needing to use Petalinux over-the-top
 
 ## Navigating the `pseudo-design-linux` project
 
