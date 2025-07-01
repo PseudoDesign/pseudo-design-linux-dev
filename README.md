@@ -31,7 +31,7 @@ This describes the steps needed to set up and build images to run on the Cora Z7
 
 ##### Programming and Running
 
-Program the image using the SD card
+TODO: Add SD programming instructions.
 
 ## `repo` development workflow
 
