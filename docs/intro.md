@@ -38,6 +38,8 @@ It's HARD.  Being a meta-tool, it requires knowledge of both Yocto and the indiv
 
 Being an open source project, documentation is tedious and lacking.
 
+Technical debt can snowball fast, where a "bad" Yocto project can take 10x longer to develop for than a "good" project.
+
 It's tempting to choose alternatives for your project structure, but all paths lead to Yocto:
 
 * Rolling your own build system...
@@ -47,7 +49,7 @@ It's tempting to choose alternatives for your project structure, but all paths l
   * ends up with something way more complicated than a Yocto project
 * Using an OTS Linux distro like Debian...
   * limits what a "stripped down" version of your image will look like 
-  * isn't suitable for embedded products
+  * isn't usually suitable for embedded products
   * probably isn't supported by your HW manufacturer
 * Using the typical "Petalinux" tools...
   * Just gives you a less functional, proprietary wrapper around an already functional Yocto ecosystem
@@ -55,7 +57,7 @@ It's tempting to choose alternatives for your project structure, but all paths l
 
 ## Your First Yocto Project -- `hello-pseudo-design-linux`
 
-When I was first introduced to Yocto, I was put in charge of a project's Yocto build because I was the only person at the company who could even spell "Linux".  Needless to say, I was in way over my head.  This section is the guide I wish I'd have read before I dove right in.
+When I was first introduced to Yocto, I was put in charge of a project's Yocto build because I was the only person at the company who could even spell "Linux".  Needless to say, I was in way over my head.  This section is the guide I wish I'd have had before I started.
 
 ### Yocto Terms
 
@@ -64,7 +66,7 @@ When I was first introduced to Yocto, I was put in charge of a project's Yocto b
 * [Meta Layer](https://docs.yoctoproject.org/ref-manual/terms.html#term-Layer) - A collection of related recipes.  If you're making a one-off project, you'll probably create a single, custom meta layer to track all of your changes.  As time passes and your projects grow more complex, you will create meta layers for each modular component of your projects.
 * [Machine](https://docs.yoctoproject.org/ref-manual/variables.html#term-MACHINE) - A target piece of hardware for which your Image is built.  If you're using an eval kit or SoM, the machine-specific definitions are typically provided by the hardware manufacturer.
 * [Distro](https://docs.yoctoproject.org/ref-manual/variables.html#term-DISTRO) - 
-* [Image](https://docs.yoctoproject.org/ref-manual/terms.html#term-Image) - A binary output that's run on a specific machine.  Different images typically include different packages, but still function on multiple machines.  Typically, you'll have a `core-image-minimal` which builds the smallest possible image to boot your system, and `core-image-development`, which additionally includes tools helpful for hardware & software development.
+* [Image](https://docs.yoctoproject.org/ref-manual/terms.html#term-Image) - A binary output that's run on a specific machine (for example, an SD card image for a Raspberry Pi).  Different images typically include different packages, but still function on multiple machines.  Typically, you'll have a `core-image-minimal` which builds the smallest possible image to boot your system, and `core-image-development`, which additionally includes tools helpful for hardware & software development.
 * Releases (aka branches)
 
 I'd also recommend reading at least the bolded portion of the official [What I wish I’d known about Yocto Project](https://docs.yoctoproject.org/what-i-wish-id-known.html) document.  A lot of it will be over your head now, but it's a good document to come back and read every now and then, no matter how much experieince you may have.
