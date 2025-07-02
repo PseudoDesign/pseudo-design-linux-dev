@@ -22,9 +22,9 @@ Not necessarily true for *all* hardware manufacturers, of course.  But if you're
 
 ### Gives you everything you need (even the stuff you don't know yet!)
 
-* Provides SDK
-* Provides software BOM
-* Can provide QEMU targets
+* Provides SDK - For free, provided you use the tool correctly
+* Provides software BOM - For free, provided you use the tool correctly
+* Can provide QEMU targets - Just set it up like any other machine
 * Many release artificats (WIC, Software upgrade images, etc)
 
 ### Portable, Iteratable, Maintainable
@@ -51,12 +51,20 @@ It's tempting to choose alternatives for your project structure, but all paths l
   * probably isn't supported by your HW manufacturer
 * Using the typical "Petalinux" tools...
   * Just gives you a less functional, proprietary wrapper around an already functional Yocto ecosystem
-  * AMD now maintains [yocto recipes](https://github.com/Xilinx/yocto-manifests) without needing to use Petalinux over-the-top
+  * AMD now maintains [Yocto recipes](https://github.com/Xilinx/yocto-manifests) without needing to use Petalinux over-the-top
 
-## Navigating the `pseudo-design-linux` project
+## Your First Yocto Project -- `hello-pseudo-design-linux`
 
-* Meta Layers
-* Machines
-* Distros
-* Images
+When I was first introduced to Yocto, I was put in charge of a project's Yocto build because I was the only person at the company who could even spell "Linux".  Needless to say, I was in way over my head.  This section is the guide I wish I'd have read before I dove right in.
+
+### Yocto Terms
+
+* [Recipe](https://docs.yoctoproject.org/ref-manual/terms.html#term-Recipe) - A set of instructions for building a package, using the `.bb` file extension.  These are the smallest unit you'll typically interact with when working within Yocto.
+  * If you happen to be familiar with Bazel, these are functionally similar to Bazel's BUILD and MODULE files.
+* [Meta Layer](https://docs.yoctoproject.org/ref-manual/terms.html#term-Layer) - A collection of related recipes.  If you're making a one-off project, you'll probably create a single, custom meta layer to track all of your changes.  As time passes and your projects grow more complex, you will create meta layers for each modular component of your projects.
+* [Machine](https://docs.yoctoproject.org/ref-manual/variables.html#term-MACHINE) - A target piece of hardware for which your Image is built.  If you're using an eval kit or SoM, the machine-specific definitions are typically provided by the hardware manufacturer.
+* [Distro](https://docs.yoctoproject.org/ref-manual/variables.html#term-DISTRO) - 
+* [Image](https://docs.yoctoproject.org/ref-manual/terms.html#term-Image) - A binary output that's run on a specific machine.  Different images typically include different packages, but still function on multiple machines.  Typically, you'll have a `core-image-minimal` which builds the smallest possible image to boot your system, and `core-image-development`, which additionally includes tools helpful for hardware & software development.
 * Releases (aka branches)
+
+I'd also recommend reading at least the bolded portion of the official [What I wish I’d known about Yocto Project](https://docs.yoctoproject.org/what-i-wish-id-known.html) document.  A lot of it will be over your head now, but it's a good document to come back and read every now and then, no matter how much experieince you may have.
