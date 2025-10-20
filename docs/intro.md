@@ -83,37 +83,3 @@ When I was first introduced to Yocto, I was put in charge of a project's Yocto b
 This guide assumes you have an embedded SoC development kit that has a published meta-layer supporting the hardware.  Since *I'm* publishing the meta-layer to support the [cora-z7](https://digilent.com/reference/programmable-logic/cora-z7/start), this guide will target that hardware.  The steps below cover how to set up the project for off-the-shelf Xilinx development kits, such as the `zcu102` or `cora-z7`.  If you're using different hardware, you should start by following their quick-start guide instructions, but still read this section to get a better understanding of the project structure.
 
 Following along with some kind of hardware is helpful. The [Raspberry Pi](https://github.com/agherzan/meta-raspberrypi?tab=readme-ov-file#quick-start) is a good choice if you have one handy.
-
-#### Set up Yocto Project Development Workspace
-
-A Yocto development workspace typically contains the following:
-
-* **`sources/`** - This directory contains the various meta-layers needed by the project, e.g. `meta-xilinx`
-* **`scripts/`** - This directory contains scripts needed to set up your development environment shell by calling it with `source`, e.g. `source setupsdk`
-* **Build Environment** - In my projects, I include a dockerized build environment, usually mapped to the `docker/` directory.  Other projects' quick-start-guides may not reference Dockerized builds.  In that case, your build environment is just whatever system you're logged into.
-* **Development Environment** - Similarly, I include a development environment to help coordinate my various Yocto projects.  This environment is mapped to the `dev/` directory.
-
-My development environment leverages Google's [`git-repo`](https://gerrit.googlesource.com/git-repo) tool.  This provides a mechanism for managing multiple git repositories via a [JSON-formatted manifest definitions](https://github.com/PseudoDesign/pseudo-design-linux-manifest). Install `git-repo`, navigate to a new directory, and execute:
-
-`repo init -u https://github.com/PseudoDesign/pseudo-design-linux-manifest -b scarthgap -m xilinx.xml && repo sync`
-
-This command:
-
-* Creates a `git-repo` environment sourced from the [`pseudo-design-linux-manifest`](https://github.com/PseudoDesign/pseudo-design-linux-manifest)'s `scarthgap` branch, targeting the [`xilinx.xml`]() file.
-* Syncs the manifest file, cloning the appropriate git repositories and setting up the directory structure
-
-Your development environment should look roughtly like the structure mentioned above:
-
-```
-adam@malak:~/pseudo-design-linux-dev$ ls -ltr
-total 16
-lrwxrwxrwx  1 adam adam   13 May  2 19:35 README.md -> dev/README.md
-drwxrwxr-x  2 adam adam 4096 May  2 19:35 manifest
-lrwxrwxrwx  1 adam adam   15 May 20 18:56 rakefile.rb -> dev/rakefile.rb
-drwxrwxr-x  3 adam adam 4096 Jun  8 20:15 dev
-lrwxrwxrwx  1 adam adam   34 Jun 10 17:33 scripts -> sources/meta-pseudo-design/scripts
-drwxrwxr-x 24 adam adam 4096 Jun 24 20:41 sources
-drwxrwxr-x  2 adam adam 4096 Jun 24 20:57 docker
-```
-
-
