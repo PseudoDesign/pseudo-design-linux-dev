@@ -83,3 +83,5 @@ When I was first introduced to Yocto, I was put in charge of a project's Yocto b
 This guide assumes you have an embedded SoC development kit that has a published meta-layer supporting the hardware.  Since *I'm* publishing the meta-layer to support the [cora-z7](https://digilent.com/reference/programmable-logic/cora-z7/start), this guide will target that hardware.  The steps below cover how to set up the project for off-the-shelf Xilinx development kits, such as the `zcu102` or `cora-z7`.  If you're using different hardware, you should start by following their quick-start guide instructions, but still read this section to get a better understanding of the project structure.
 
 Following along with some kind of hardware is helpful. The [Raspberry Pi](https://github.com/agherzan/meta-raspberrypi?tab=readme-ov-file#quick-start) is a good choice if you have one handy.
+
+** This document is a work in progress **
